@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 use minidl::Library;
+use std::os::raw::c_int;
 
 // Must match `___tracy_source_location_data` struct in TracyC.h
 #[repr(C)]
@@ -19,7 +20,7 @@ pub struct SourceLocation {
 #[derive(Copy, Clone)]
 pub struct ZoneContext {
     id: u32,
-    active: i32,
+    active: c_int,
 }
 
 // Define a set of no-op implementation functions that are called if the tracy
